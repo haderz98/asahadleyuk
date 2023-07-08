@@ -1,0 +1,42 @@
+[
+    {
+        "meals": [
+            "Spaghetti Bolognese",
+            "Cajun Chicken Pasta",
+            "Tomato Pasta",
+            "Carbonara"
+        ]
+    },
+    {
+        "meals": [
+            "Stir Fry",
+            "Ramen",
+            "Teriyaki Chicken with Rice",
+            "Sweet & Sour Chicken with Rice"
+        ]
+    },
+    {
+        "meals": [
+            "Pizza",
+            "Chicken Burger",
+            "Beef Burger",
+            "Chicken Nuggets/Dippers"
+        ]
+    },
+    {
+        "meals": [
+            "Fish & Vegetables",
+            "Steak & Vegetables",
+            "Chicken & Vegetables",
+            "Meat, Eggs, Chips & Peas"
+        ]
+    },
+    {
+        "meals": [
+            "Fajitas",
+            "Dirty Rice",
+            "Curry",
+            "Hotdogs"
+        ]
+    }
+]
