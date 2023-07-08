@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -7,16 +7,16 @@ import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
-import Drawer from "@mui/material/Drawer";
+import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
+import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import CssBaseline from "@mui/material/CssBaseline";
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Contact"];
+const navItems = ["Experience", "Skills", "Work", "Contact"];
 
 const NavBar = (props) => {
   const { window } = props;
@@ -50,8 +50,8 @@ const NavBar = (props) => {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar position="nav">
-        <Container>
+      <AppBar position="static">
+        <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Typography
               variant="h6"
@@ -71,11 +71,12 @@ const NavBar = (props) => {
 
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <IconButton
-                color="inherit"
-                aria-label="open drawer"
-                edge="start"
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
                 onClick={handleDrawerToggle}
-                sx={{ mr: 2, display: { sm: "none" } }}
+                color="inherit"
               >
                 <MenuIcon />
               </IconButton>
@@ -117,7 +118,7 @@ const NavBar = (props) => {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true,
           }}
           sx={{
             display: { xs: "block", sm: "none" },
