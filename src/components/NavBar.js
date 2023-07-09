@@ -7,7 +7,6 @@ import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
@@ -49,8 +48,7 @@ const NavBar = (props) => {
 
   return (
     <Box sx={{ display: "flex" }}>
-      <CssBaseline />
-      <AppBar position="static">
+      <AppBar position="static" sx={{ bgcolor: "#1D2430" }}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Typography
@@ -62,8 +60,9 @@ const NavBar = (props) => {
                 mr: 2,
                 display: { xs: "none", md: "flex" },
                 fontWeight: 700,
-                color: "inherit",
+                color: "#FFFFFF",
                 textDecoration: "none",
+                fontSize: 25,
               }}
             >
               AH.
@@ -72,7 +71,6 @@ const NavBar = (props) => {
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <IconButton
                 size="large"
-                aria-label="account of current user"
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 onClick={handleDrawerToggle}
@@ -91,18 +89,32 @@ const NavBar = (props) => {
                 display: { xs: "flex", md: "none" },
                 flexGrow: 1,
                 fontWeight: 700,
-                color: "inherit",
+                color: "#FFFFFF",
                 textDecoration: "none",
               }}
             >
               AH.
             </Typography>
-            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+            <Box
+              sx={{
+                flexGrow: 1,
+                justifyContent: "right",
+                display: { xs: "none", md: "flex" },
+              }}
+            >
               {navItems.map((item) => (
                 <Button
                   key={item}
                   onClick={handleDrawerToggle}
-                  sx={{ my: 2, color: "white", display: "block" }}
+                  sx={{
+                    my: 1,
+                    mx: 1,
+                    color: "#7F8794",
+                    display: "block",
+                    fontWeight: 700,
+                    fontSize: 16,
+                    textTransform: "none",
+                  }}
                 >
                   {item}
                 </Button>
