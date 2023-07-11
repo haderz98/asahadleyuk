@@ -1,21 +1,20 @@
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
+import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
+import MenuIcon from "@mui/icons-material/Menu";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
 
 const drawerWidth = 240;
-const navItems = ["Experience", "Skills", "Work", "Contact"];
+const navItems = ["Home", "About", "Contact"];
 
 const NavBar = (props) => {
   const { window } = props;
@@ -28,7 +27,7 @@ const NavBar = (props) => {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+        AH.
       </Typography>
       <Divider />
       <List>
@@ -47,81 +46,53 @@ const NavBar = (props) => {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex" }}>
-      <AppBar position="static" sx={{ bgcolor: "#1D2430" }}>
-        <Container maxWidth="xl">
-          <Toolbar disableGutters>
-            <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              href="/"
-              sx={{
-                mr: 2,
-                display: { xs: "none", md: "flex" },
-                fontWeight: 700,
-                color: "#FFFFFF",
-                textDecoration: "none",
-                fontSize: 25,
-              }}
-            >
-              AH.
-            </Typography>
-
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-              <IconButton
-                size="large"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleDrawerToggle}
-                color="inherit"
-              >
-                <MenuIcon />
-              </IconButton>
-            </Box>
+    <div>
+      <AppBar component="nav" sx={{ bgcolor: "#1D2430" }}>
+        <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: "none" } }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Box
+            sx={{
+              flexGrow: 1,
+              justifyContent: "center",
+            }}
+          >
             <Typography
               variant="h5"
-              noWrap
-              component="a"
-              href=""
               sx={{
-                mr: 2,
-                display: { xs: "flex", md: "none" },
                 flexGrow: 1,
-                fontWeight: 700,
-                color: "#FFFFFF",
-                textDecoration: "none",
+                textAlign: "center",
+                display: { xs: "block", sm: "none" },
+                mr: 4,
               }}
             >
               AH.
             </Typography>
-            <Box
+            <Typography
+              variant="h6"
               sx={{
                 flexGrow: 1,
-                justifyContent: "right",
-                display: { xs: "none", md: "flex" },
+                display: { xs: "none", sm: "block" },
               }}
             >
-              {navItems.map((item) => (
-                <Button
-                  key={item}
-                  onClick={handleDrawerToggle}
-                  sx={{
-                    my: 1,
-                    mx: 1,
-                    color: "#7F8794",
-                    display: "block",
-                    fontWeight: 700,
-                    fontSize: 16,
-                    textTransform: "none",
-                  }}
-                >
-                  {item}
-                </Button>
-              ))}
-            </Box>
-          </Toolbar>
-        </Container>
+              AH.
+            </Typography>
+          </Box>
+          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+            {navItems.map((item) => (
+              <Button key={item} sx={{ color: "#fff" }}>
+                {item}
+              </Button>
+            ))}
+          </Box>
+        </Toolbar>
       </AppBar>
       <Box component="nav">
         <Drawer
@@ -143,7 +114,7 @@ const NavBar = (props) => {
           {drawer}
         </Drawer>
       </Box>
-    </Box>
+    </div>
   );
 };
 
