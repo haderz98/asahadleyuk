@@ -47,7 +47,7 @@ const NavBar = (props) => {
 
   return (
     <div>
-      <AppBar component="nav" sx={{ bgcolor: "#1D2430" }}>
+      <AppBar position="static" sx={{ bgcolor: "#1D2430" }}>
         <Toolbar>
           <IconButton
             color="inherit"
