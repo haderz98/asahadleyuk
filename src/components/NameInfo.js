@@ -1,36 +1,51 @@
-import { Box, Typography, Stack } from "@mui/material";
+import { Box, Typography, Stack, Button } from "@mui/material";
 import React from "react";
 
 const NameInfo = () => {
   return (
     <div>
-      <Box sx={{ justifyContent: "center", my: 2 }}>
+      <Box sx={{ my: 8 }}>
         <Stack
-          spacing={2}
+          spacing={4}
           sx={{
-            alignItems: "center",
+            alignItems: { xs: "left", sm: "center" },
           }}
         >
           <Typography
-            sx={{ textAlign: "center", color: "#FFFFFF", fontWeight: "Bold" }}
-            variant="h3"
+            sx={{
+              color: "#FFFFFF",
+              fontWeight: "Bold",
+              typography: { xs: "h4", sm: "h2", md: "h2" },
+            }}
           >
             Hi, I'm Asa Hadley
           </Typography>
           <Typography
-            sx={{ textAlign: "center", color: "#FFFFFF", fontWeight: "Bold" }}
-            variant="h4"
+            sx={{
+              color: "#FFFFFF",
+              fontWeight: "Bold",
+              typography: { xs: "h5", sm: "h4" },
+            }}
           >
-            Software Developer
+            a Software Developer.
           </Typography>
           <Typography
-            sx={{ textAlign: "left", color: "#FFFFFF", maxWidth: "75%" }}
+            sx={{
+              color: "#FFFFFF",
+              maxWidth: 700,
+            }}
           >
-            I am software engineer with over 3 years’ C# experience. Hard
-            working and keen to learn, I always want to grow and improve my
-            skills. A passion for technology drives me to experiment with new
-            programming languages, software and hardware.
+            I am a dedicated software developer with over 3 years of hands-on
+            experience in C#. I possess a strong work ethic and an insatiable
+            desire to expand my knowledge and enhance my skills.
           </Typography>
+          <Box>
+            <Button variant="outlined" sx={{ backgroundColor: "#2978b5" }}>
+              <Typography sx={{ color: "#FFFFFF", textTransform: "none" }}>
+                Resume
+              </Typography>
+            </Button>
+          </Box>
         </Stack>
       </Box>
     </div>

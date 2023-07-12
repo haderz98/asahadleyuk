@@ -1,15 +1,17 @@
 import React from "react";
 import NavBar from "./components/NavBar";
 import NameInfo from "./components/NameInfo";
-import { Stack } from "@mui/material";
+import { Box } from "@mui/material";
+import Experience from "./components/Experience";
 
 const App = () => {
   return (
     <div>
-      <Stack>
-        <NavBar />
+      <NavBar />
+      <Box sx={{ mx: 4 }}>
         <NameInfo />
-      </Stack>
+        <Experience />
+      </Box>
     </div>
   );
 };
