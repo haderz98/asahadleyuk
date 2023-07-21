@@ -1,10 +1,10 @@
-import { Box, Typography, Stack, Button } from "@mui/material";
+import { Box, Typography, Stack } from "@mui/material";
 import React from "react";
 
 const NameInfo = () => {
   return (
     <div>
-      <Box sx={{ my: 8 }}>
+      <Box sx={{ my: 4 }}>
         <Stack
           spacing={4}
           sx={{
@@ -39,13 +39,6 @@ const NameInfo = () => {
             experience in C#. I possess a strong work ethic and an insatiable
             desire to expand my knowledge and enhance my skills.
           </Typography>
-          <Box>
-            <Button variant="outlined" sx={{ backgroundColor: "#2978b5" }}>
-              <Typography sx={{ color: "#FFFFFF", textTransform: "none" }}>
-                Resume
-              </Typography>
-            </Button>
-          </Box>
         </Stack>
       </Box>
     </div>

@@ -3,16 +3,18 @@ import NavBar from "./components/NavBar";
 import NameInfo from "./components/NameInfo";
 import { Box } from "@mui/material";
 import Experience from "./components/Experience";
+import Skills from "./components/Skills";
 
 const App = () => {
   return (
-    <div>
+    <>
       <NavBar />
-      <Box sx={{ mx: 4 }}>
+      <Box sx={{ p: 2 }}>
         <NameInfo />
         <Experience />
+        <Skills />
       </Box>
-    </div>
+    </>
   );
 };
 
