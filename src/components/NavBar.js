@@ -4,16 +4,30 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { Button } from "@mui/material";
+import { useState, useEffect } from "react";
 
 const NavBar = () => {
+  const [scrollState, setScrollState] = useState(false);
+
+  useEffect(() => {
+    const updatePosition = () => {
+      setScrollState(window.scrollY > 0);
+    };
+    window.addEventListener("scroll", updatePosition);
+    updatePosition();
+    return () => window.removeEventListener("scroll", updatePosition);
+  }, []);
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
-        position="static"
+        position="fixed"
         sx={{
-          bgcolor: "#0B1223",
-          borderBottom: 1,
-          borderBottomColor: "#242A39",
+          bgcolor: "transparent",
+          backdropFilter: "blur(20px)",
+          borderBottom: scrollState ? 1 : 0,
+          borderBottomColor: "#413f4f",
+          boxShadow: scrollState ? 1 : 0,
         }}
       >
         <Toolbar sx={{ mx: { xs: 0, sm: "10%", lg: "20%" } }}>
