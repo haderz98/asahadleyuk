@@ -1,5 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
+import { motion } from "framer-motion";
+import HeaderDivider from "./HeaderDivider";
 
 const skills = [
   "C#",
@@ -16,11 +18,19 @@ const skills = [
 const SkillCard = (props) => {
   return (
     <Box
+      component={motion.div}
+      initial={{ scale: 0, rotate: 180 }}
+      animate={{ scale: 1, rotate: 0 }}
+      transition={{
+        type: "spring",
+        stiffness: 260,
+        damping: 20,
+      }}
       sx={{
         flexGrow: 1,
-        bgcolor: "#162033",
+        bgcolor: "#121b2d",
         p: 2,
-        border: "1px solid #413f4f",
+        border: "1px solid rgba(255,255,255,0.2)",
         borderRadius: "8px",
       }}
     >
@@ -51,7 +61,8 @@ const Skills = () => {
         px: 2,
         py: 10,
         textAlign: "center",
-        bgcolor: "#0F172A",
+        background:
+          "repeating-linear-gradient(90deg,rgba(255,255,255,0.05), rgba(255,255,255,0.05) 1px, rgba(15,23,42,1) 1px, rgba(15,23,42,1) 12.5%)",
         flexShrink: 1,
       }}
     >
@@ -67,6 +78,7 @@ const Skills = () => {
       >
         Skills
       </Typography>
+      <HeaderDivider />
       <Box
         sx={{
           py: 2,
@@ -74,6 +86,7 @@ const Skills = () => {
           justifyContent: "center",
           flexWrap: "wrap",
           gap: 2,
+          maxWidth: "85ch",
         }}
       >
         {skills.map((skill) => SkillCard(skill))}

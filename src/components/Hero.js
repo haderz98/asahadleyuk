@@ -1,6 +1,7 @@
 import { Avatar, Box, Typography } from "@mui/material";
 import React from "react";
 import ProfilePicture from "../images/avatar.png";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
@@ -15,9 +16,19 @@ const Hero = () => {
         gap: 2,
         px: 2,
         textAlign: "center",
+        background:
+          "repeating-linear-gradient(90deg,rgba(255,255,255,0.05), rgba(255,255,255,0.05) 1px, transparent 1px, transparent 20px), repeating-linear-gradient(0deg,rgba(255,255,255,0.05), rgba(255,255,255,0.05) 1px, transparent 1px, transparent 20px)",
       }}
     >
       <Avatar
+        component={motion.div}
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{
+          type: "spring",
+          stiffness: 260,
+          damping: 20,
+        }}
         src={ProfilePicture}
         sx={{
           width: { xs: "160px", sm: "200px" },
@@ -26,6 +37,14 @@ const Hero = () => {
         }}
       />
       <Box
+        component={motion.div}
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{
+          type: "spring",
+          stiffness: 260,
+          damping: 20,
+        }}
         sx={{
           fontFamily: "Radio Canada, sans-serif",
           fontSize: "3rem",
@@ -46,6 +65,14 @@ const Hero = () => {
         </Box>
       </Box>
       <Typography
+        component={motion.div}
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{
+          type: "spring",
+          stiffness: 260,
+          damping: 20,
+        }}
         sx={{
           fontFamily: "Radio Canada, sans-serif",
           fontSize: "1.2rem",

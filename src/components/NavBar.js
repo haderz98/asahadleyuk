@@ -26,7 +26,7 @@ const NavBar = () => {
           bgcolor: "transparent",
           backdropFilter: "blur(20px)",
           borderBottom: scrollState ? 1 : 0,
-          borderBottomColor: "#413f4f",
+          borderBottomColor: "rgba(255,255,255,0.1)",
           boxShadow: scrollState ? 1 : 0,
         }}
       >

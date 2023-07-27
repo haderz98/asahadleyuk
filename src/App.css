@@ -6,5 +6,9 @@ html {
   font-family: "Radio Canada", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #121b2d;
+  background-color: #0b1224;
+}
+
+.video-player {
+  overflow: hidden;
 }
