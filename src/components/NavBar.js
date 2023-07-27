@@ -41,7 +41,19 @@ const NavBar = () => {
               textTransform: "uppercase",
             }}
           >
-            AH.
+            AH
+            <Typography
+              sx={{
+                display: "inline-block",
+                fontFamily: "Radio Canada, sans-serif",
+                fontSize: "3rem",
+                fontWeight: "600",
+                color: "white",
+                textTransform: "uppercase",
+              }}
+            >
+              .
+            </Typography>
           </Typography>
           <Button
             variant="contained"

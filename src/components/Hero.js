@@ -1,5 +1,6 @@
 import { Avatar, Box, Typography } from "@mui/material";
 import React from "react";
+import ProfilePicture from "../images/avatar.png";
 
 const Hero = () => {
   return (
@@ -16,12 +17,19 @@ const Hero = () => {
         textAlign: "center",
       }}
     >
-      <Avatar sx={{ width: "120px", height: "120px" }}></Avatar>
+      <Avatar
+        src={ProfilePicture}
+        sx={{
+          width: { xs: "160px", sm: "200px" },
+          height: { xs: "160px", sm: "200px" },
+          border: "6px solid #72E2AE",
+        }}
+      />
       <Box
         sx={{
           fontFamily: "Radio Canada, sans-serif",
           fontSize: "3rem",
-          fontWeight: "600",
+          fontWeight: "700",
           color: "#72E2AE",
         }}
       >
@@ -30,7 +38,7 @@ const Hero = () => {
           sx={{
             fontFamily: "Radio Canada, sans-serif",
             fontSize: "3rem",
-            fontWeight: "600",
+            fontWeight: "700",
             color: "white",
           }}
         >
@@ -46,9 +54,9 @@ const Hero = () => {
           maxWidth: "85ch",
         }}
       >
-        Experienced software developer with 4+ years of industry experience.
-        Proficient in multiple languages. Specialised in games, VR, and web
-        development.
+        Experienced software developer with 4+ years in the industry. Proficient
+        in multiple languages, specializing in immersive gaming, VR, and dynamic
+        web solutions
       </Typography>
     </Box>
   );
