@@ -1,4 +1,4 @@
-import { Box, Typography, Grid, Stack, CardMedia } from "@mui/material";
+import { Box, Typography, Grid, Stack } from "@mui/material";
 import React from "react";
 import HeaderDivider from "./HeaderDivider";
 import "../App.css";

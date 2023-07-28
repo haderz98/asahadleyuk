@@ -7,7 +7,7 @@ const HeaderDivider = () => {
       sx={{
         bgcolor: "#72E2AE",
         height: "5px",
-        width: "120px",
+        width: "100px",
         border: 1,
         borderRadius: "5px",
       }}
