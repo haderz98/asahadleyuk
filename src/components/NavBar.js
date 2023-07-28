@@ -16,8 +16,7 @@ import {
 } from "@mui/material";
 import { useState, useEffect } from "react";
 
-const pages = ["Products", "Pricing", "Blog"];
-const navItems = ["Home", "About", "Contact"];
+const navItems = ["home", "skills", "experience", "work"];
 
 const NavBar = (props) => {
   const [scrollState, setScrollState] = useState(false);
@@ -55,24 +54,65 @@ const NavBar = (props) => {
   );
 
   const navmenu = (
-    <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-      {pages.map((page) => (
-        <Button key={page} sx={{ my: 2, color: "white", display: "block" }}>
-          {page}
-        </Button>
+    <Box
+      sx={{
+        flexGrow: 1,
+        display: { xs: "none", md: "flex" },
+        textAlign: "center",
+      }}
+    >
+      {navItems.map((item) => (
+        <Box sx={{ display: "flex", textAlign: "center" }}>
+          <Button
+            key={item}
+            onClick={(e) => {
+              let section = document.getElementById(item);
+              e.preventDefault();
+              section && section.scrollIntoView({ behavior: "smooth" });
+            }}
+            sx={{
+              my: 2,
+              color: "white",
+              display: "block",
+              fontFamily: "Radio Canada, sans-serif",
+              fontSize: "0.9rem",
+              fontWeight: "500",
+              ":hover": {
+                color: "#72E2AE",
+              },
+            }}
+          >
+            {item}
+          </Button>
+        </Box>
       ))}
     </Box>
   );
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+    <Box sx={{ textAlign: "center" }}>
       {logo}
       <Divider />
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+            <ListItemButton
+              sx={{ textAlign: "center" }}
+              onClick={(e) => {
+                let section = document.getElementById(item);
+                e.preventDefault();
+                section && section.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              <ListItemText
+                primary={item}
+                sx={{
+                  fontFamily: "Radio Canada, sans-serif",
+                  fontSize: "1rem",
+                  fontWeight: "700",
+                  textTransform: "uppercase",
+                }}
+              />
             </ListItemButton>
           </ListItem>
         ))}
@@ -164,10 +204,12 @@ const NavBar = (props) => {
               keepMounted: true,
             }}
             sx={{
-              display: { xs: "block", sm: "none" },
+              display: { xs: "block", md: "none" },
               "& .MuiDrawer-paper": {
                 boxSizing: "border-box",
                 width: "240px",
+                bgcolor: "#121B2D",
+                color: "white",
               },
             }}
           >

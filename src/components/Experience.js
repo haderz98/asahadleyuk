@@ -7,6 +7,7 @@ import ExperienceCard from "./ExperienceCard";
 const Experience = () => {
   return (
     <Box
+      id="experience"
       sx={{
         display: "flex",
         alignItems: "center",

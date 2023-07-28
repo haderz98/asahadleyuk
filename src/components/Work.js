@@ -8,6 +8,7 @@ import WorkCard from "./WorkCard";
 const Work = () => {
   return (
     <Box
+      id="work"
       sx={{
         display: "flex",
         alignItems: "center",

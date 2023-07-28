@@ -55,6 +55,7 @@ const SkillCard = (props) => {
 const Skills = () => {
   return (
     <Box
+      id="skills"
       sx={{
         display: "flex",
         alignItems: "center",

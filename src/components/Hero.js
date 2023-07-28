@@ -1,4 +1,4 @@
-import { Avatar, Box, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
 import ProfilePicture from "../images/avatar.png";
 import { motion } from "framer-motion";
@@ -7,6 +7,7 @@ import AnimatedAvatar from "./AnimatedAvatar";
 const Hero = () => {
   return (
     <Box
+      id="home"
       sx={{
         flex: 1,
         height: "100vh",
