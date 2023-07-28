@@ -1,18 +1,20 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
 import { motion } from "framer-motion";
-import HeaderDivider from "./HeaderDivider";
+import AnimatedDivider from "./AnimatedDivider";
 
 const skills = [
   "C#",
-  "HTML",
+  "HTML5",
   "CSS",
   "React",
   "Git",
   "JavaScript",
   "UI/UX Design",
   "VR/XR",
-  "Unity",
+  "Unity3D",
+  ".NET Framework/Core",
+  ".NET MAUI",
 ];
 
 const SkillCard = (props) => {
@@ -21,6 +23,7 @@ const SkillCard = (props) => {
       component={motion.div}
       initial={{ scale: 0, rotate: 180 }}
       animate={{ scale: 1, rotate: 0 }}
+      whileHover={{ y: "-10px" }}
       transition={{
         type: "spring",
         stiffness: 260,
@@ -78,7 +81,7 @@ const Skills = () => {
       >
         Skills
       </Typography>
-      <HeaderDivider />
+      <AnimatedDivider />
       <Box
         sx={{
           py: 2,

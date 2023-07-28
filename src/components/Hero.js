@@ -2,6 +2,7 @@ import { Avatar, Box, Typography } from "@mui/material";
 import React from "react";
 import ProfilePicture from "../images/avatar.png";
 import { motion } from "framer-motion";
+import AnimatedAvatar from "./AnimatedAvatar";
 
 const Hero = () => {
   return (
@@ -17,25 +18,10 @@ const Hero = () => {
         px: 2,
         textAlign: "center",
         background:
-          "repeating-linear-gradient(90deg,rgba(255,255,255,0.05), rgba(255,255,255,0.05) 1px, transparent 1px, transparent 20px), repeating-linear-gradient(0deg,rgba(255,255,255,0.05), rgba(255,255,255,0.05) 1px, transparent 1px, transparent 20px)",
+          "repeating-linear-gradient(90deg,rgba(255,255,255,0.025), rgba(255,255,255,0.025) 1px, transparent 1px, transparent 30px), repeating-linear-gradient(0deg,rgba(255,255,255,0.025), rgba(255,255,255,0.025) 1px, transparent 1px, transparent 30px)",
       }}
     >
-      <Avatar
-        component={motion.div}
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{
-          type: "spring",
-          stiffness: 260,
-          damping: 20,
-        }}
-        src={ProfilePicture}
-        sx={{
-          width: { xs: "160px", sm: "200px" },
-          height: { xs: "160px", sm: "200px" },
-          border: "6px solid #72E2AE",
-        }}
-      />
+      <AnimatedAvatar image={ProfilePicture} />
       <Box
         component={motion.div}
         initial={{ scale: 0 }}
