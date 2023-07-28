@@ -86,7 +86,7 @@ const Skills = () => {
           justifyContent: "center",
           flexWrap: "wrap",
           gap: 2,
-          maxWidth: "85ch",
+          maxWidth: "90ch",
         }}
       >
         {skills.map((skill) => SkillCard(skill))}

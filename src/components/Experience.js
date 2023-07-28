@@ -50,7 +50,7 @@ const ExperienceCard = (logo, name, description, skills) => {
       <Typography
         sx={{
           fontFamily: "Radio Canada, sans-serif",
-          fontSize: "2rem",
+          fontSize: "1.5rem",
           fontWeight: "700",
           color: "white",
         }}
@@ -128,7 +128,7 @@ const Experience = () => {
           py: 2,
           display: "flex",
           justifyContent: "center",
-          maxWidth: "85ch",
+          maxWidth: "90ch",
         }}
         spacing={2}
       >

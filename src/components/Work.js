@@ -6,6 +6,9 @@ import VideoPlayer from "./VideoPlayer";
 import EBike from "../videos/eBike.mp4";
 import NPCC from "../videos/npcc_ppe.mp4";
 import PICO from "../videos/pico_adb.mp4";
+import STOPSEARCH from "../videos/stop_search.mp4";
+import DISCLOSURE from "../videos/disclosure.mp4";
+import UOWTOUR from "../videos/uow_tour.mp4";
 
 const experience = [
   {
@@ -31,6 +34,30 @@ const experience = [
       "• Written in C# and using WPF, the application provides a clean font-end for performing the core ADB commands required for setup.",
     ],
   },
+  {
+    vidUrl: STOPSEARCH,
+    name: "GWENT Police Stop & Search",
+    description: [
+      "• Sole developer on a Stop & Search training module for GWENT Police.",
+      "• Developed a random spawning system to popular the vehicle and NPCs with items and a system to simulate a 'Pat-Down' search on an NPC.",
+    ],
+  },
+  {
+    vidUrl: DISCLOSURE,
+    name: "GWENT Police Disclosure",
+    description: [
+      "• Sole developer on a Disclosure training module for GWENT Police.",
+      "• Created a system that allows the user to practice completing various documents and forms that would have to be completed at a police station.",
+    ],
+  },
+  {
+    vidUrl: UOWTOUR,
+    name: "Aspire to HE (UoW) Virtual Tour",
+    description: [
+      "• Worked closely with UOW to develop a 360° Virtual Tour of their City Campus for the Pico G2 VR Headset.",
+      "• Developed a LAN classroom experience that allows a remote control of multiple VR headsets at once.",
+    ],
+  },
 ];
 
 const WorkCard = (vidUrl, name, description) => {
@@ -42,7 +69,7 @@ const WorkCard = (vidUrl, name, description) => {
         p: 2,
         border: "1px solid rgba(255,255,255,0.2)",
         borderRadius: "8px",
-        minHeight: "460px",
+        minHeight: "525px",
         alignItems: "center",
       }}
     >
@@ -50,7 +77,7 @@ const WorkCard = (vidUrl, name, description) => {
       <Typography
         sx={{
           fontFamily: "Radio Canada, sans-serif",
-          fontSize: "2rem",
+          fontSize: "1.5rem",
           fontWeight: "700",
           color: "white",
         }}
@@ -109,12 +136,12 @@ const Work = () => {
           py: 2,
           display: "flex",
           justifyContent: "center",
-          maxWidth: "85ch",
+          maxWidth: "90ch",
         }}
         spacing={2}
       >
         {experience.map((work) => (
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} lg={4}>
             {WorkCard(work.vidUrl, work.name, work.description)}
           </Grid>
         ))}
