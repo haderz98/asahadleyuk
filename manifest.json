@@ -3,31 +3,32 @@
   "name": "Asa Hadley",
   "icons": [
     {
-      "src": "favicon/favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "favicon/maskable_icon_x512.png",
+      "src": "favicon/favicon_512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "favicon/maskable_icon_x512.png",
+      "src": "favicon/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "favicon/maskable_512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "favicon/favicon.ico",
+      "src": "favicon/maskable.svg",
       "sizes": "any",
-      "type": "image/x-icon",
+      "type": "image/svg+xml",
       "purpose": "maskable"
     },
     {
-      "src": "favicon/logo_mono.png",
-      "sizes": "512x512",
+      "src": "favicon/monochrome_256.png",
+      "sizes": "256x256",
       "type": "image/png",
       "purpose": "monochrome"
     }
