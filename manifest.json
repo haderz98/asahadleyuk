@@ -9,22 +9,10 @@
       "purpose": "any"
     },
     {
-      "src": "favicon/favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any"
-    },
-    {
       "src": "favicon/maskable_512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
-    },
-    {
-      "src": "favicon/monochrome_512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "monochrome"
     }
   ],
   "start_url": ".",
