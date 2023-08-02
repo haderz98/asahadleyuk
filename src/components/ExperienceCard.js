@@ -2,8 +2,6 @@ import { Avatar, Box, Typography } from "@mui/material";
 import React from "react";
 import { motion } from "framer-motion";
 
-const animScale = { xs: 1, lg: 1.05 };
-
 const ExperienceCard = (logo, name, description, skills) => {
   return (
     <Box

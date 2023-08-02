@@ -26,6 +26,28 @@ const NavBar = (props) => {
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
+
+  const handleScrollIntoView = async (id) => {
+    handleDrawerToggle();
+
+    await new Promise((r) => setTimeout(r, 0));
+
+    let element = document.getElementById(id);
+    element && element.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const container =
+    windowProp !== undefined ? () => windowProp().document.body : undefined;
+
+  useEffect(() => {
+    const updatePosition = () => {
+      setScrollState(window.scrollY > 0);
+    };
+    window.addEventListener("scroll", updatePosition);
+    updatePosition();
+    return () => window.removeEventListener("scroll", updatePosition);
+  }, []);
+
   const logo = (
     <Typography
       sx={{
@@ -61,15 +83,11 @@ const NavBar = (props) => {
         textAlign: "center",
       }}
     >
-      {navItems.map((item) => (
+      {navItems.map((navItem) => (
         <Box sx={{ display: "flex", textAlign: "center" }}>
           <Button
-            key={item}
-            onClick={(e) => {
-              let section = document.getElementById(item);
-              e.preventDefault();
-              section && section.scrollIntoView({ behavior: "smooth" });
-            }}
+            key={navItem}
+            onClick={(e) => handleScrollIntoView(navItem)}
             sx={{
               my: 2,
               color: "white",
@@ -82,7 +100,7 @@ const NavBar = (props) => {
               },
             }}
           >
-            {item}
+            {navItem}
           </Button>
         </Box>
       ))}
@@ -94,18 +112,14 @@ const NavBar = (props) => {
       {logo}
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+        {navItems.map((navItem) => (
+          <ListItem key={navItem} disablePadding>
             <ListItemButton
+              onClick={() => handleScrollIntoView(navItem)}
               sx={{ textAlign: "center" }}
-              onClick={(e) => {
-                let section = document.getElementById(item);
-                e.preventDefault();
-                section && section.scrollIntoView({ behavior: "smooth" });
-              }}
             >
               <ListItemText
-                primary={item}
+                primary={navItem}
                 sx={{
                   fontFamily: "Radio Canada, sans-serif",
                   fontSize: "1rem",
@@ -139,18 +153,6 @@ const NavBar = (props) => {
       <MenuIcon />
     </IconButton>
   );
-
-  const container =
-    windowProp !== undefined ? () => windowProp().document.body : undefined;
-
-  useEffect(() => {
-    const updatePosition = () => {
-      setScrollState(window.scrollY > 0);
-    };
-    window.addEventListener("scroll", updatePosition);
-    updatePosition();
-    return () => window.removeEventListener("scroll", updatePosition);
-  }, []);
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -199,7 +201,6 @@ const NavBar = (props) => {
             container={container}
             variant="temporary"
             open={mobileOpen}
-            onClose={handleDrawerToggle}
             ModalProps={{
               keepMounted: true,
             }}
