@@ -87,7 +87,7 @@ const NavBar = (props) => {
         <Box sx={{ display: "flex", textAlign: "center" }}>
           <Button
             key={navItem}
-            onClick={(e) => handleScrollIntoView(navItem)}
+            onClick={() => handleScrollIntoView(navItem)}
             sx={{
               my: 2,
               color: "white",
