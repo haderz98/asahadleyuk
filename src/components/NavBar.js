@@ -1,10 +1,10 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
 import {
+  Toolbar,
+  Box,
+  AppBar,
+  Typography,
   Button,
   List,
   ListItem,
@@ -21,7 +21,11 @@ const navItems = ["home", "skills", "experience", "work"];
 const NavBar = (props) => {
   const [scrollState, setScrollState] = useState(false);
   const { windowProp } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const handleContactFormToggle = () => {
+    window.open("mailto:asa.hadley@hotmail.co.uk?subject=Porfolio%20Enquiry");
+  };
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -180,11 +184,13 @@ const NavBar = (props) => {
           {navmenu}
           <Button
             variant="contained"
+            onClick={handleContactFormToggle}
             sx={{
               display: { xs: "none", md: "block" },
               fontFamily: "Radio Canada, sans-serif",
               fontSize: "1rem",
               fontWeight: "500",
+              borderRadius: "8px",
               color: "#0F172A",
               bgcolor: "#72E2AE",
               ":hover": {
