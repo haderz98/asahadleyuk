@@ -3,6 +3,8 @@ import React from "react";
 import ProfilePicture from "../images/avatar.png";
 import { motion } from "framer-motion";
 import AnimatedAvatar from "./AnimatedAvatar";
+import TypingProfession from "./TypingProfession";
+import SocialLinks from "./SocialLinks";
 
 const Hero = () => {
   return (
@@ -34,22 +36,13 @@ const Hero = () => {
         }}
         sx={{
           fontFamily: "Radio Canada, sans-serif",
-          fontSize: "3rem",
+          fontSize: { xs: "2.5rem", sm: "3rem" },
           fontWeight: "700",
           color: "#72E2AE",
         }}
       >
         Hi, I'm Asa Hadley
-        <Box
-          sx={{
-            fontFamily: "Radio Canada, sans-serif",
-            fontSize: "3rem",
-            fontWeight: "700",
-            color: "white",
-          }}
-        >
-          Software Developer
-        </Box>
+        <TypingProfession />
       </Box>
       <Typography
         component={motion.div}
@@ -62,7 +55,7 @@ const Hero = () => {
         }}
         sx={{
           fontFamily: "Radio Canada, sans-serif",
-          fontSize: "1.2rem",
+          fontSize: { xs: "1.1rem", sm: "1.2rem" },
           fontWeight: "400",
           color: "#bfbecb",
           maxWidth: "85ch",
@@ -72,6 +65,7 @@ const Hero = () => {
         in multiple languages, specializing in immersive gaming, VR, and dynamic
         web solutions
       </Typography>
+      <SocialLinks />
     </Box>
   );
 };
