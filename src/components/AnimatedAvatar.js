@@ -16,8 +16,8 @@ const AnimatedAvatar = (props) => {
         }}
         src={props.image}
         sx={{
-          width: { xs: "160px", sm: "200px" },
-          height: { xs: "160px", sm: "200px" },
+          width: { xs: "150px", sm: "200px" },
+          height: { xs: "150px", sm: "200px" },
           border: "6px solid #72E2AE",
         }}
       />

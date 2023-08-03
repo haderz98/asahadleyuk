@@ -7,7 +7,7 @@ const TypingProfession = () => {
     <Box
       sx={{
         fontFamily: "Radio Canada, sans-serif",
-        fontSize: { xs: "2.5rem", sm: "3rem" },
+        fontSize: { xs: "2rem", sm: "3rem" },
         fontWeight: "700",
         color: "white",
       }}

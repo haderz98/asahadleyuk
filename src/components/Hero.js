@@ -36,7 +36,7 @@ const Hero = () => {
         }}
         sx={{
           fontFamily: "Radio Canada, sans-serif",
-          fontSize: { xs: "2.5rem", sm: "3rem" },
+          fontSize: { xs: "2rem", sm: "3rem" },
           fontWeight: "700",
           color: "#72E2AE",
         }}
@@ -55,7 +55,7 @@ const Hero = () => {
         }}
         sx={{
           fontFamily: "Radio Canada, sans-serif",
-          fontSize: { xs: "1.1rem", sm: "1.2rem" },
+          fontSize: { xs: "1rem", sm: "1.2rem" },
           fontWeight: "400",
           color: "#bfbecb",
           maxWidth: "85ch",

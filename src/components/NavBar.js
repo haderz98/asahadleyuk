@@ -18,30 +18,22 @@ import { useState, useEffect } from "react";
 
 const navItems = ["home", "skills", "experience", "work"];
 
-const NavBar = (props) => {
+const NavBar = () => {
   const [scrollState, setScrollState] = useState(false);
-  const { windowProp } = props;
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
-  const handleContactFormToggle = () => {
+  const handleContact = () => {
     window.open("mailto:asa.hadley@hotmail.co.uk?subject=Porfolio%20Enquiry");
   };
 
-  const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
+  const toggleDrawer = () => {
+    setDrawerOpen((prevState) => !prevState);
   };
 
-  const handleScrollIntoView = async (id) => {
-    handleDrawerToggle();
-
-    await new Promise((r) => setTimeout(r, 0));
-
-    let element = document.getElementById(id);
-    element && element.scrollIntoView({ behavior: "smooth" });
+  const scrollIntoView = async (id) => {
+    let element = await document.getElementById(id);
+    await element.scrollIntoView({ behavior: "smooth" });
   };
-
-  const container =
-    windowProp !== undefined ? () => windowProp().document.body : undefined;
 
   useEffect(() => {
     const updatePosition = () => {
@@ -91,7 +83,7 @@ const NavBar = (props) => {
         <Box sx={{ display: "flex", textAlign: "center" }}>
           <Button
             key={navItem}
-            onClick={() => handleScrollIntoView(navItem)}
+            onClick={() => scrollIntoView(navItem)}
             sx={{
               my: 2,
               color: "white",
@@ -119,8 +111,16 @@ const NavBar = (props) => {
         {navItems.map((navItem) => (
           <ListItem key={navItem} disablePadding>
             <ListItemButton
-              onClick={() => handleScrollIntoView(navItem)}
-              sx={{ textAlign: "center" }}
+              onClick={() => {
+                toggleDrawer();
+                scrollIntoView(navItem);
+              }}
+              sx={{
+                textAlign: "center",
+                ":hover": {
+                  color: "#72E2AE",
+                },
+              }}
             >
               <ListItemText
                 primary={navItem}
@@ -143,7 +143,7 @@ const NavBar = (props) => {
       color="inherit"
       aria-label="open drawer"
       edge="start"
-      onClick={handleDrawerToggle}
+      onClick={toggleDrawer}
       sx={{
         display: { xs: "flex", md: "none" },
         color: "#0F172A",
@@ -184,7 +184,7 @@ const NavBar = (props) => {
           {navmenu}
           <Button
             variant="contained"
-            onClick={handleContactFormToggle}
+            onClick={handleContact}
             sx={{
               display: { xs: "none", md: "block" },
               fontFamily: "Radio Canada, sans-serif",
@@ -204,9 +204,8 @@ const NavBar = (props) => {
         </Toolbar>
         <Box component="nav">
           <Drawer
-            container={container}
-            variant="temporary"
-            open={mobileOpen}
+            open={drawerOpen}
+            onClose={toggleDrawer}
             ModalProps={{
               keepMounted: true,
             }}
