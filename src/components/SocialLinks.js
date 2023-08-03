@@ -1,5 +1,5 @@
 import { Button, Stack } from "@mui/material";
-import { alpha, styled } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import React from "react";
 import { GitHub, LinkedIn } from "@mui/icons-material";
 
