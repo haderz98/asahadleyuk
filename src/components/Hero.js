@@ -61,7 +61,7 @@ const Hero = () => {
           maxWidth: "85ch",
         }}
       >
-        Experienced software developer with 4+ years in the industry. Proficient
+        Experienced software engineer with 4+ years in the industry. Proficient
         in multiple languages, specializing in immersive gaming, VR, and dynamic
         web solutions
       </Typography>

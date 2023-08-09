@@ -16,7 +16,7 @@ const TypingProfession = () => {
         options={{ loop: true, speed: 100, deleteSpeed: 100 }}
         getBeforeInit={(instance) => {
           instance
-            .type("Software Developer.")
+            .type("Software Engineer.")
             .pause(1000)
             .delete(20)
             .pause(1000)
